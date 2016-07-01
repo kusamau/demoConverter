@@ -1,4 +1,4 @@
-package org.mnagni.unitconverter;
+package org.mnagni.unitconverter.core;
 
 public interface Unit<T extends UnitEnumInterface> {
 	T getType();

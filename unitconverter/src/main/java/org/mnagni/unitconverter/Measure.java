@@ -1,6 +1,9 @@
 package org.mnagni.unitconverter;
 
-public class Measure<T extends UnitEnumInterface> {
+import org.mnagni.unitconverter.core.Unit;
+import org.mnagni.unitconverter.core.UnitEnumInterface;
+
+public final class Measure<T extends UnitEnumInterface> {
 
 	private final Unit<T> unit;
 	private final double value;
@@ -12,7 +15,7 @@ public class Measure<T extends UnitEnumInterface> {
 	}
 	
 	public Measure<T> convertTo(Unit<T> unit) {
-		return new Measure(unit, this.value * this.unit.getConversionFactor(unit));
+		return new Measure<T>(unit, this.value * this.unit.getConversionFactor(unit));
 	}
 
 	public Unit<T> getUnit() {
